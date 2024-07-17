@@ -1,18 +1,25 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+These packages collectively contribute to the functionality, user experience, styling, and development workflow of the "Khabar-kinbo-front-end" web project.
 
-## Getting Started
+# Run the project Process
 
-First, run the development server:
+## Guidelines
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1. **Clone the Repository:** Clone the project repository to your local development environment using the following command:
+   ```
+   git clone https://github.com/Raisul-24/khabar_kinbo_front-end.git
+   ```
+2. **Run the command:** Open your termonal and run this command:
+   ```
+   npm i
+   ```
+   or
+   ```
+   npm i -f
+   ```
+3. **Run the project:** For run this project need to run this command
+    ```
+   npm run dev
+   ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
