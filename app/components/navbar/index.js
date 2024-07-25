@@ -4,7 +4,8 @@ import Link from "next/link";
 
 const Navbar = () => {
    return (
-      <div className="navbar bg-base-100">
+      <div className="bg-base-100 ">
+         <div className="navbar w-full mx-auto max-w-7xl">
          <div className="navbar-start">
             <div className="dropdown">
                <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -56,6 +57,7 @@ const Navbar = () => {
                </div>
             </button>
          </div>
+      </div>
       </div>
    );
 };
