@@ -1,5 +1,5 @@
 // app/components/navbar/navbar.js
-
+import React from "react";
 import Link from "next/link";
 
 const Navbar = () => {
@@ -19,23 +19,25 @@ const Navbar = () => {
             <div id="menu" className="hidden lg:flex lg:items-center lg:gap-6">
                <ul className="flex flex-col gap-2 mt-2 mb-4 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
                   <li className="flex items-center p-1 font-sans text-sm antialiased font-medium leading-normal gap-x-2 text-blue-gray-900">
-                     <a href="#" className="flex items-center">Pages</a>
+                     <Link href="" className="flex items-center">Pages</Link>
                   </li>
                   <li className="flex items-center p-1 font-sans text-sm antialiased font-medium leading-normal gap-x-2 text-blue-gray-900">
-                     <a href="#" className="flex items-center">Account</a>
+                     <Link href="" className="flex items-center">Account</Link>
                   </li>
                   <li className="flex items-center p-1 font-sans text-sm antialiased font-medium leading-normal gap-x-2 text-blue-gray-900">
-                     <a href="#" className="flex items-center">Blocks</a>
+                     <Link href="" className="flex items-center">Blocks</Link>
                   </li>
                   <li className="flex items-center p-1 font-sans text-sm antialiased font-medium leading-normal gap-x-2 text-blue-gray-900">
-                     <a href="#" className="flex items-center">Docs</a>
+                     <Link href="" className="flex items-center">Docs</Link>
                   </li>
                   <li>
+                     <link href="/login">
                      <button
                         class="hidden px-4 py-2 font-sans text-xs font-bold text-center text-gray-900 uppercase align-middle transition-all rounded-lg select-none hover:bg-gray-900/10 active:bg-gray-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none lg:inline-block"
                         type="button">
                         <span>Log In</span>
                      </button>
+                     </link>
                   </li>
                   <li>
                      <button
