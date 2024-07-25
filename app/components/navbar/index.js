@@ -4,52 +4,59 @@ import Link from "next/link";
 
 const Navbar = () => {
    return (
-      <nav className="block w-full px-4 py-2 mx-auto text-black bg-white border shadow-md rounded-b-xl border-white/80 bg-opacity-80 backdrop-blur-2xl backdrop-saturate-200 lg:px-8 lg:py-4">
-         <div className="container flex items-center justify-between mx-auto text-blue-gray-900">
-            <Link href="/" className="mr-4 block cursor-pointer py-1.5 font-sans text-base font-medium leading-relaxed text-inherit antialiased">
-               Khabar Kinbo
-            </Link>
-            <div className="lg:hidden">
-               <button id="menu-btn" className="focus:outline-none">
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+      <div className="navbar bg-base-100">
+         <div className="navbar-start">
+            <div className="dropdown">
+               <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+                  <svg
+                     xmlns="http://www.w3.org/2000/svg"
+                     className="h-5 w-5"
+                     fill="none"
+                     viewBox="0 0 24 24"
+                     stroke="currentColor">
+                     <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M4 6h16M4 12h8m-8 6h16" />
                   </svg>
-               </button>
-            </div>
-            <div id="menu" className="hidden lg:flex lg:items-center lg:gap-6">
-               <ul className="flex flex-col gap-2 mt-2 mb-4 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
-                  <li className="flex items-center p-1 font-sans text-sm antialiased font-medium leading-normal gap-x-2 text-blue-gray-900">
-                     <Link href="" className="flex items-center">Pages</Link>
-                  </li>
-                  <li className="flex items-center p-1 font-sans text-sm antialiased font-medium leading-normal gap-x-2 text-blue-gray-900">
-                     <Link href="" className="flex items-center">Account</Link>
-                  </li>
-                  <li className="flex items-center p-1 font-sans text-sm antialiased font-medium leading-normal gap-x-2 text-blue-gray-900">
-                     <Link href="" className="flex items-center">Blocks</Link>
-                  </li>
-                  <li className="flex items-center p-1 font-sans text-sm antialiased font-medium leading-normal gap-x-2 text-blue-gray-900">
-                     <Link href="" className="flex items-center">Docs</Link>
-                  </li>
-                  <li>
-                     <link href="/login">
-                     <button
-                        class="hidden px-4 py-2 font-sans text-xs font-bold text-center text-gray-900 uppercase align-middle transition-all rounded-lg select-none hover:bg-gray-900/10 active:bg-gray-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none lg:inline-block"
-                        type="button">
-                        <span>Log In</span>
-                     </button>
-                     </link>
-                  </li>
-                  <li>
-                     <button
-                        class="hidden select-none rounded-lg bg-gradient-to-tr from-gray-900 to-gray-800 py-2 px-4 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-gray-900/10 transition-all hover:shadow-lg hover:shadow-gray-900/20 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none lg:inline-block"
-                        type="button">
-                        <span>Sign in</span>
-                     </button>
-                  </li>
+               </div>
+               <ul
+                  tabIndex={0}
+                  className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                  <li><a>Item 1</a></li>
+                  <li><a>Item 2</a></li>
                </ul>
             </div>
+            <Link href='/' className="btn btn-ghost text-xl">Khabar Kinbo</Link>
          </div>
-      </nav>
+         <div className="navbar-center hidden lg:flex">
+            <ul className="menu menu-horizontal px-1">
+               <li><a>Item 1</a></li>
+               <li><a>Item 2</a></li>
+            </ul>
+         </div>
+         <div className="navbar-end">
+            <Link href='/login' className="btn">Login</Link>
+            <button className="btn btn-ghost btn-circle">
+               <div className="indicator">
+                  <svg
+                     xmlns="http://www.w3.org/2000/svg"
+                     className="h-5 w-5"
+                     fill="none"
+                     viewBox="0 0 24 24"
+                     stroke="currentColor">
+                     <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                  </svg>
+                  <span className="badge badge-xs badge-primary indicator-item"></span>
+               </div>
+            </button>
+         </div>
+      </div>
    );
 };
 
