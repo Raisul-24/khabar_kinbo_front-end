@@ -1,8 +1,10 @@
 "use client"
+import { Contex } from '@/provider/contexProvider';
 import React, { useState } from 'react';
 
 const Reg_Input = () => {
     // State for form inputs
+    
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
