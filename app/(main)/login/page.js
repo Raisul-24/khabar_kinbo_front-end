@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Login_input from './login_input';
 import GoogleLoginBtn from '@/app/components/googleLoginBtn/googleLoginBtn';
+import Link from 'next/link';
 export default function login() {
    return (
     <section className="flex mt-3 flex-col md:flex-row h-screen items-center">
@@ -19,8 +20,8 @@ export default function login() {
     </div>
 
     <div className="bg-white w-full md:max-w-md lg:max-w-full md:mx-auto md:mx-0 md:w-1/2 xl:w-1/3 h-screen px-6 lg:px-16 xl:px-12 flex items-center justify-center">
-        <div className="w-full h-100">
-            <h1 className="text-xl md:text-2xl font-bold leading-tight ">Log in to your account</h1>
+        <div className="w-full h-100 ">
+            <h1 className="text-xl md:text-2xl font-bold leading-tight  ">Log in to your account</h1>
 
             <Login_input></Login_input>
 
@@ -28,7 +29,7 @@ export default function login() {
 
             <GoogleLoginBtn></GoogleLoginBtn>
 
-            <p className="mt-8">Need an account? <a href="#" className="text-blue-500 hover:text-blue-700 font-semibold">Create an account</a></p>
+            <p className="mt-8">Need an account?  <Link href="/regestation">Create an account</Link> </p>
         </div>
     </div>
 
