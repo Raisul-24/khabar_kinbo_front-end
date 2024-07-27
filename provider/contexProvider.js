@@ -1,11 +1,74 @@
 "use client"
-const { createContext } = require("react");
+const { createContext, useEffect, useState } = require("react");
+import app from "@/Firebase/firebase.config";
+import {
+    GoogleAuthProvider,
+    createUserWithEmailAndPassword,
+    getAuth,
+    onAuthStateChanged,
+    signInWithEmailAndPassword,
+    signInWithPopup,
+    signOut,
+  } from "firebase/auth";
 
-export const Contex = createContext()
+
+const auth = getAuth(app);
+const googleProvider = new GoogleAuthProvider();
+export const Contex = createContext();
 
 const ContexProvider = ({children}) => {
+
+    const [user, setUser] = useState(null);
+
+    const createUser = (email, password) => {
+        // setLoading(true);
+        return createUserWithEmailAndPassword(auth, email, password);
+      };
+    
+      const signIn = (email, password) => {
+        setLoading(true);
+        return signInWithEmailAndPassword(auth, email, password);
+      };
+      const googleSignIn = () => {
+        setLoading(true);
+        return signInWithPopup(auth, googleProvider);
+      };
+      const githubSignIn = () => {
+        setLoading(true);
+        return signInWithPopup(auth, githubProvider);
+      };
+    
+      const logOut = () => {
+        return signOut(auth);
+      };
+
+
+      useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+          setUser(currentUser);
+          if (currentUser) {
+            const userData = {
+              name: currentUser?.displayName,
+              email: currentUser?.email,
+              photo: currentUser?.photoURL,
+              role: "user",
+              points: 0,
+              warning: 0,
+              blocked: false,
+            };
+           
+            
+          } 
+        });
+    
+        return () => {
+          return unsubscribe();
+        };
+      }, []);
+
+
     const info = {
-        user: "hello"
+        createUser
     }
     return(
         <Contex.Provider value={info}>
