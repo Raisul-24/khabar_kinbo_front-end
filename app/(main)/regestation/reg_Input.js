@@ -48,7 +48,7 @@ const Reg_Input = () => {
           if (result.user) {
             Swal.fire({
               title: "Registration Successful",
-              text: "Welcome to our Converter!",
+              text: "Welcome to our resturent!",
               icon: "success"
             }).then(() => {
               router.push("/");
