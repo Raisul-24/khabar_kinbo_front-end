@@ -1,13 +1,19 @@
 import Link from 'next/link';
 import React from 'react';
+import Image from 'next/image'
 
 const Footer = () => {
   return (
     <footer className="bg-yellow-50">
-      <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-screen-xl py-2 md:py-16">
         <footer className="footer text-base-content">
           <aside>
-            <img className='w-32' alt='logo' src='/public/logo.jpg'></img>
+            <Image className='hidden md:flex rounded-full'
+              src="/logo.jpg"
+              width={150}
+              height={150}
+              alt="Logo"
+            />
           </aside>
           <nav>
             <h6 className="footer-title">Services</h6>
