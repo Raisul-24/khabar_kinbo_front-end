@@ -30,13 +30,10 @@ const ContexProvider = ({children}) => {
         return signInWithEmailAndPassword(auth, email, password);
       };
       const googleSignIn = () => {
-        setLoading(true);
+        // setLoading(true);
         return signInWithPopup(auth, googleProvider);
       };
-      const githubSignIn = () => {
-        setLoading(true);
-        return signInWithPopup(auth, githubProvider);
-      };
+      
     
       const logOut = () => {
         return signOut(auth);
@@ -69,7 +66,8 @@ const ContexProvider = ({children}) => {
 
     const info = {
         createUser,
-        signIn
+        signIn,
+        googleSignIn
     }
     return(
         <Contex.Provider value={info}>
