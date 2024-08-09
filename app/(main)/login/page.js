@@ -4,7 +4,7 @@ import GoogleLoginBtn from '@/app/components/googleLoginBtn/googleLoginBtn';
 import Link from 'next/link';
 export default function login() {
    return (
-    <section className="flex mt-3 flex-col md:flex-row h-screen items-center">
+    <section className="flex pt-16 bg-white flex-col md:flex-row h-screen items-center">
 
     <div className="bg-white hidden lg:block h-full w-full md:w-1/2 xl:w-2/3 rounded rounded-lg">
         <Image
