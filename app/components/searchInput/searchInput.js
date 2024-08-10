@@ -24,7 +24,7 @@ const LocationAndFoodInput = () => {
                 >
                     <h2 className="text-lg font-semibold">Location:</h2>
                    
-                    <LocationInput></LocationInput>
+                    <LocationInput ></LocationInput>
                 </div>
 
                 {/* Right Side for Food Item */}
