@@ -1,8 +1,10 @@
 import React from 'react';
+import Link from 'next/link'; 
 
 const ArieasCard = ({ name, resturent , image }) => {
 
     return (
+        <Link href={`/${name}`} className="block p-4 border rounded-lg shadow transition-transform duration-200 hover:scale-105 hover:bg-gray-100 hover:shadow-lg">
         <div className="bg-white relative isolate flex flex-col justify-end overflow-hidden rounded-2xl px-8 mt-5  pt-40 max-w-sm mx-auto w-[500px]">
             <img
                 src={image}
@@ -15,6 +17,7 @@ const ArieasCard = ({ name, resturent , image }) => {
                 Total resturent: {resturent}
             </div>
         </div>
+        </Link>
     );
 };
 
