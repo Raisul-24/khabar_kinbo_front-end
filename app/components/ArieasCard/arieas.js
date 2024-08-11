@@ -1,7 +1,7 @@
 import ArieasCard from "./arieasCard";
 
 async function getArieas(params) {
-  const res = await fetch('http://localhost:5000/api/locations')
+  const res = await fetch('http://localhost:51000/api/locations')
   
   return res.json()
 }
