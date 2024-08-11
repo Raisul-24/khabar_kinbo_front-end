@@ -5,7 +5,9 @@ const MainLayout = ({children}) => {
     return (
         <>
         <Navbar></Navbar>
+        <div className="mx-auto max-w-screen-2xl">
         {children}
+        </div>
         <Footer></Footer>
         </>
       );
