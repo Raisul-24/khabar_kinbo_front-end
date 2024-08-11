@@ -1,6 +1,6 @@
 import axios from "axios";
 export const axiosPrivate = axios.create({
-  baseURL: "http://localhost:5000",
+  baseURL: "http://localhost:51000",
   withCredentials: true,
 });
 export const UseAxiosPrivate = () => {
