@@ -1,10 +1,14 @@
 "use client"
+import React, { useContext, useState } from 'react';
+import Swal from "sweetalert2";
+import { useRouter } from 'next/navigation'; // Use 'next/navigation' in Next.js 13
 import { Contex } from '@/provider/contexProvider';
-import React, { useState } from 'react';
 
 const Reg_Input = () => {
-    // State for form inputs
-    
+    const { createUser } = useContext(Contex);
+    const router = useRouter(); // Initialize router for navigation
+
+    // State for form inputs and loading state
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
@@ -12,21 +16,62 @@ const Reg_Input = () => {
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [accountType, setAccountType] = useState('client');
+    const [loading, setLoading] = useState(false); // Initialize loading state
 
     // Handle form submission
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault(); // Prevent the default form submission
-        // Access the form values from the state
-        console.log({
-            firstName,
-            lastName,
-            phoneNumber,
-            email,
-            password,
-            confirmPassword,
-            accountType,
+
+        // Basic form validation
+        if (!firstName || !lastName || !phoneNumber || !email || !password || !confirmPassword) {
+            Swal.fire({
+                icon: "error",
+                title: "Missing Fields",
+                text: "Please fill in all the fields.",
+            });
+            return;
+        }
+
+        if (password !== confirmPassword) {
+            Swal.fire({
+                icon: "error",
+                title: "Password Mismatch",
+                text: "Passwords do not match.",
+            });
+            return;
+        }
+
+
+        createUser(email, password)
+        .then((result) => {
+          console.log(result);
+          if (result.user) {
+            Swal.fire({
+              title: "Registration Successful",
+              text: "Welcome to our resturent!",
+              icon: "success"
+            }).then(() => {
+              router.push("/");
+            });
+          }
+        })
+        .catch((error) => {
+          console.error(error); // Always a good idea to log the error for debugging
+          Swal.fire({
+            icon: "error",
+            title: "Registration Failed",
+            text: error.message || "Something went wrong. Please try again.",
+          });
+        })
+        .finally(() => {
+          // Ensure loading is set to false in both success and error cases
+          setLoading(false);
         });
-        // Add your form submission logic here
+      
+    
+
+
+
     };
 
     return (
@@ -70,7 +115,7 @@ const Reg_Input = () => {
                 </div>
 
                 <div>
-                    <label className="block mb-2 text-sm text-gray-600 dark:text-gray-200">Last name</label>
+                    <label className="block mb-2 text-sm text-gray-600 dark:text-gray-200">Last Name</label>
                     <input
                         type="text"
                         value={lastName}
@@ -81,7 +126,7 @@ const Reg_Input = () => {
                 </div>
 
                 <div>
-                    <label className="block mb-2 text-sm text-gray-600 dark:text-gray-200">Phone number</label>
+                    <label className="block mb-2 text-sm text-gray-600 dark:text-gray-200">Phone Number</label>
                     <input
                         type="text"
                         value={phoneNumber}
@@ -92,7 +137,7 @@ const Reg_Input = () => {
                 </div>
 
                 <div>
-                    <label className="block mb-2 text-sm text-gray-600 dark:text-gray-200">Email address</label>
+                    <label className="block mb-2 text-sm text-gray-600 dark:text-gray-200">Email Address</label>
                     <input
                         type="email"
                         value={email}
@@ -114,12 +159,12 @@ const Reg_Input = () => {
                 </div>
 
                 <div>
-                    <label className="block mb-2 text-sm text-gray-600 dark:text-gray-200">Confirm password</label>
+                    <label className="block mb-2 text-sm text-gray-600 dark:text-gray-200">Confirm Password</label>
                     <input
                         type="password"
                         value={confirmPassword}
                         onChange={(e) => setConfirmPassword(e.target.value)}
-                        placeholder="Enter your password"
+                        placeholder="Confirm your password"
                         className="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
                     />
                 </div>
@@ -127,8 +172,9 @@ const Reg_Input = () => {
                 <button
                     type="submit"
                     className="flex items-center justify-between w-full px-6 py-3 text-sm tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-500 rounded-md hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50"
+                    disabled={loading} // Disable button while loading
                 >
-                    <span>Sign Up </span>
+                    <span>{loading ? 'Registering...' : 'Sign Up'}</span>
                     <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 rtl:-scale-x-100" viewBox="0 0 20 20" fill="currentColor">
                         <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
                     </svg>
@@ -136,6 +182,6 @@ const Reg_Input = () => {
             </form>
         </>
     );
-}
+};
 
 export default Reg_Input;
