@@ -14,7 +14,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <ContexProvider>
-        <div className="">
+        <div className="bg-white">
         {children}
         </div>
         </ContexProvider>
