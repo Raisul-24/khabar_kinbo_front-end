@@ -1,7 +1,5 @@
 // pages/restaurant/[id].js
 
-"use client"; // Ensure this is a client component
-import { useRouter } from 'next/router';
 import Navbar from '../components/navbar';
 import Footer from '../components/footer';
 import LocationAndFoodInput from '../components/searchInput/searchInput';

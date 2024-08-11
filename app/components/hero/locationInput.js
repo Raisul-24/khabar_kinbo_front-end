@@ -1,11 +1,17 @@
 "use client"
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { FaLocationCrosshairs } from "react-icons/fa6";
 import axios from 'axios';
-const LocationInput = () => {
+import { Contex } from '@/provider/contexProvider';
+const LocationInput = ({fun}) => {
     const [inputValue, setInputValue] = useState('');
     const [isLoading, setIsLoading] = useState(false);
-
+    const {setLocationInput} = useContext(Contex);
+    
+    setLocationInput(inputValue)
+    
+    
+    
     const handleGetLocation = () => {
         if (navigator.geolocation) {
             setIsLoading(true);

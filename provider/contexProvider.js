@@ -39,6 +39,7 @@ const ContexProvider = ({children}) => {
         return signOut(auth);
       };
 
+      const [locationInput , setLocationInput] = useState(""); 
 
       useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -67,7 +68,9 @@ const ContexProvider = ({children}) => {
     const info = {
         createUser,
         signIn,
-        googleSignIn
+        googleSignIn,
+        locationInput,
+        setLocationInput
     }
     return(
         <Contex.Provider value={info}>

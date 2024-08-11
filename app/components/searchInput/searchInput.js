@@ -1,18 +1,17 @@
 // components/LocationAndFoodInput.js
-
-import { useState } from 'react';
+"use client"
+import { useContext, useState } from 'react';
 import LocationInput from '../hero/locationInput';
+import { Contex } from '@/provider/contexProvider';
 
 const LocationAndFoodInput = () => {
     const [location, setLocation] = useState(''); // State for the location
     const [foodItem, setFoodItem] = useState(''); // State for the food item
-
+    const {locationInput} = useContext(Contex);
     // Function to handle location input
-    const handleLocationClick = () => {
-        // Set the default location to Dhaka when clicked
-        const userLocation = "Dhaka"; 
-        setLocation(userLocation);
-    };
+    console.log(locationInput);
+    console.log(foodItem);
+    
 
     return (
         <div className="flex items-center justify-center mt-10">
