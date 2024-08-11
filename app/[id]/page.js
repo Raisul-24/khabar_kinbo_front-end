@@ -8,7 +8,7 @@ import LocationAndFoodInput from '../components/searchInput/searchInput';
 const Restaurant = ({ params }) => {
     const { id } = params; // 
     // console.log(id);
-    
+    // https://componentland.com/component/product-card-2
 
     // Check if the ID is available
     if (!id) {
@@ -19,11 +19,12 @@ const Restaurant = ({ params }) => {
             <Navbar />
             <LocationAndFoodInput></LocationAndFoodInput>
             <main className='p-4'>
-                <h1 className='text-2xl font-bold mb-4'>Restaurant ID: {id}</h1>
-                <p>
-                    Welcome to the restaurant page! Here you can find information about restaurant with ID: {id}.
-                </p>
-                {/* Add more content or fetch restaurant data using the ID */}
+                <div className='flex items-center justify-center'>
+                    <h1 className="text-2xl md:text-3xl pl-2 my-2 border-l-4 font-sans font-bold border-teal-400 dark:text-gray-200">
+                        Restruents in {id}
+                    </h1>
+                </div>
+
             </main>
 
             <Footer />
