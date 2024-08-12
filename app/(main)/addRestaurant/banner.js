@@ -5,11 +5,11 @@ import React from 'react';
 const banner = () => {
   return (
     <div
-      className="hero min-h-96 rounded-b-xl max-w-screen"
+      className="hero min-h-96 max-w-screen"
       style={{
         backgroundImage: "url(/addRestaurentBanner1.jpg)",
       }}>
-      <div className="hero-overlay bg-opacity-70 rounded-b-xl"></div>
+      <div className="hero-overlay bg-opacity-70"></div>
       <div className="hero-content text-neutral-content text-left">
         <div className="max-w-4xl">
           <h1 className="mb-5 text-xl md:text-3xl lg:text-5xl font-bold text-yellow-900">Partner with Khabar Kinbo <br></br>
