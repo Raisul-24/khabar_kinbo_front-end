@@ -20,7 +20,7 @@ const chooseUs = () => {
     </div>
     
     <div className="stat-value text-primary">10+ areas </div>
-    <div className="stat-title">in Dhaka City </div>
+    <div className="stat-title text-black">in Dhaka City </div>
   </div>
 
   <div className="stat">
@@ -28,15 +28,15 @@ const chooseUs = () => {
     <IoRestaurantSharp />
     </div>
     <div className="stat-value text-secondary">100+</div>
-    <div className="stat-title">restaurant listings</div>
+    <div className="stat-title text-black">restaurant listings</div>
   </div>
 
   <div className="stat">
-    <div className="stat-figure text-secondary text-5xl">
+    <div className="stat-figure text-accent text-5xl">
     <GiCash />
     </div>
-    <div className="stat-value">10K +</div>
-    <div className="stat-title">monthly orders</div>
+    <div className="stat-value text-accent">10.0 k+</div>
+    <div className="stat-title text-black">monthly orders</div>
   </div>
 </div>
          </div>
