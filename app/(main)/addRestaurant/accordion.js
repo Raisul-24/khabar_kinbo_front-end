@@ -2,7 +2,7 @@ import React from 'react';
 
 const accordion = () => {
    return (
-      <div className=' my-10'>
+      <div className='my-10'>
          <h2 className='font-bold mb:font-extrabold text-2xl mb:text-9xl my-5 text-center'>Frequently asked questions</h2>
          <div className="collapse collapse-arrow bg-base-200">
             <input type="radio" name="my-accordion-2" />
