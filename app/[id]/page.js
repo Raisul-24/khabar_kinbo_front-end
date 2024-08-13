@@ -7,7 +7,8 @@ import RestruntCard from '../components/restruntCard/restruntCard';
 
 const Restaurant = async ({ params }) => {
     const { id } = params; // Get the restaurant ID from the URL
-
+    console.log(id);
+    
     let restaurant = null;
     let error = null;
     // console.log(params);
@@ -76,7 +77,7 @@ const Restaurant = async ({ params }) => {
                 </div>
                 <div className='grid grid-cols-3 justify-center	justify-items-center'>
                     {restaurant?.map((restaurant, index) => (
-                        <RestruntCard key={index} restaurant={restaurant} />
+                        <RestruntCard key={index} name={restaurant?.name} bio={restaurant?.bio} open_close_time={restaurant?.open_close_time} img={restaurant?.img} rating={restaurant?.rating} address={restaurant?.address} offer={restaurant?.offer} locationRoute={id}/>
                     ))}
                 </div>
             </main>

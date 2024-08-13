@@ -40,6 +40,7 @@ const ContexProvider = ({children}) => {
       };
 
       const [locationInput , setLocationInput] = useState(""); 
+     
 
       useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
