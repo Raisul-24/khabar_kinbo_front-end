@@ -24,7 +24,7 @@ const banner = () => {
                >Login to view your existing restaurant</button> </Link> 
           
           </div>
-          <p className='text-white text-xs md:text-base text-center mt-5'>Need help? Contact +880 1558-323489</p>
+          <p className='text-white text-xs md:text-base text-center mt-6'>Need help? Contact +880 1500-000000</p>
         </div>
       </div>
     </div>
