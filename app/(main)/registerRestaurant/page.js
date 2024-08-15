@@ -1,10 +1,11 @@
 import React from 'react';
+import RegisterRestaurant from './RegisterRestaurant';
 
 const registerRestaurant = () => {
    return (
-      <div>
-         
-      </div>
+      <div className="container mx-auto my-16">
+      <RegisterRestaurant />
+    </div>
    );
 };
 
