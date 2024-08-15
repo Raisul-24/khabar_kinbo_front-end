@@ -1,7 +1,7 @@
 import React from 'react';
 import Reg_Input from './reg_Input';
 
-const Regestation = () => {
+const Registration = () => {
     return (
         <> 
             <section className="bg-white dark:bg-gray-900">
@@ -31,4 +31,4 @@ const Regestation = () => {
     );
 }
 
-export default Regestation;
+export default Registration;

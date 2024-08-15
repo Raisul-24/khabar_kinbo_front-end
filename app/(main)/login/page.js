@@ -8,7 +8,7 @@ export default function login() {
 
     <div className="bg-white hidden lg:block h-full w-full md:w-1/2 xl:w-2/3 rounded rounded-lg">
         <Image
-        className='rounded rounded-lg'
+        className='rounded-lg'
         src="https://i.ibb.co/3Sk354G/image.png"
         alt="image"
         width={500}
@@ -19,7 +19,7 @@ export default function login() {
 
     </div>
 
-    <div className="bg-white w-full md:max-w-md lg:max-w-full md:mx-auto md:mx-0 md:w-1/2 xl:w-1/3 h-screen px-6 lg:px-16 xl:px-12 flex items-center justify-center">
+    <div className="bg-white w-full md:max-w-md lg:max-w-full md:mx-auto md:w-1/2 xl:w-1/3 h-screen px-6 lg:px-16 xl:px-12 flex items-center justify-center">
         <div className="w-full h-100 ">
             <h1 className="text-xl md:text-2xl font-bold leading-tight  ">Log in to your account</h1>
 

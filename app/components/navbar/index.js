@@ -27,7 +27,7 @@ const Navbar = () => {
                      tabIndex={0}
                      className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
                      <li><Link href='/'>item-1</Link></li>
-                     <li><Link href='/login'>Add Restaurants</Link></li>
+                     <li><Link href='/addRestaurant'>Add Restaurants</Link></li>
                      <li><Link href='/login'>Login</Link></li>
                   </ul>
                </div>

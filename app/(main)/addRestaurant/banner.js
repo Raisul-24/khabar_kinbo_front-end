@@ -18,7 +18,7 @@ const banner = () => {
             And get ads worth 5k BDT. Valid for new restaurant partners in select cities.
           </p>
           <div className='grid grid-cols-1 md:grid-cols-2 gap-2 lg:gap-5 text-xs md:text-base'>
-          <Link href='/'><button className="font-semibold border-2 px-3 py-2 rounded-xl border-yellow-700 hover:border-red-600 bg-yellow-50 hover:bg-white-100 text-red-400 hover:text-yellow-900"
+          <Link href='/registerRestaurant'><button className="font-semibold border-2 px-3 py-2 rounded-xl border-yellow-700 hover:border-red-600 bg-yellow-50 hover:bg-white-100 text-red-400 hover:text-yellow-900"
                >Register your restaurant</button></Link>
              <Link href='/'><button className="font-semibold border-2 px-3 py-2 rounded-xl border-yellow-700 hover:border-red-600 bg-red-50 hover:bg-white-100 text-red-400 hover:text-yellow-900"
                >Login to view your existing restaurant</button> </Link> 
