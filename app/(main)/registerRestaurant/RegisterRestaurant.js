@@ -11,11 +11,11 @@ export default function RegisterRestaurant() {
    console.log(data);
     try {
       // const response = await axios.post('/api/register-restaurant', data);
-      console.log('Server Response:', response.data);
+      // console.log('Server Response:', response.data);
       alert('Restaurant registered successfully!');
     } catch (error) {
-      console.error('There was an error registering the restaurant:', error);
-      alert('Failed to register the restaurant. Please try again.');
+      // console.error('There was an error registering the restaurant:', error);
+      // alert('Failed to register the restaurant. Please try again.');
     }
   };
 
