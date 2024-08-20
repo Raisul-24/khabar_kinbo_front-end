@@ -4,9 +4,6 @@ export const axiosPrivate = axios.create({
   withCredentials: true,
 });
 export const UseAxiosPrivate = () => {
-
-  
-
   return axiosPrivate;
 };
 export default UseAxiosPrivate;

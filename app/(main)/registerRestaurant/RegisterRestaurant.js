@@ -3,19 +3,32 @@ import React from 'react';
 
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
+import { axiosPrivate } from '@/app/components/Axious/axiosprivate';
+import { toast } from 'react-hot-toast';
 
 export default function RegisterRestaurant() {
   const { register, handleSubmit, formState: { errors } } = useForm();
 
   const onSubmit = async (data) => {
-   console.log(data);
+    console.log(data)
     try {
-      // const response = await axios.post('/api/register-restaurant', data);
-      // console.log('Server Response:', response.data);
-      alert('Restaurant registered successfully!');
-    } catch (error) {
-      // console.error('There was an error registering the restaurant:', error);
-      // alert('Failed to register the restaurant. Please try again.');
+      const response = await axiosPrivate.post('/requestRestaurant', data);
+      console.log('Success:', response.data);
+      // Handle success (e.g., show a success message, redirect, etc.)
+      toast.promise(
+        saveSettings(settings),
+         {
+           loading: 'Saving...',
+           success: <b>Request Restaurant submitted Successfully! <br></br> 
+           You'll be notified later</b>,
+           error: <b>Something Wrong! Please try again later.</b>
+         }
+       );
+    } 
+    catch (error) {
+      console.error('Error:', error);
+      // Handle error (e.g., show an error message)
+      toast.error("Something Wrong! Please try again later.")
     }
   };
 
