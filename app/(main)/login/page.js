@@ -6,7 +6,7 @@ export default function login() {
    return (
     <section className="flex pt-16 bg-white flex-col md:flex-row h-screen items-center">
 
-    <div className="bg-white hidden lg:block h-full w-full md:w-1/2 xl:w-2/3 rounded rounded-lg">
+    <div className="bg-white hidden lg:block h-full w-full md:w-1/2 xl:w-2/3 rounded-lg">
         <Image
         className='rounded-lg'
         src="https://i.ibb.co/3Sk354G/image.png"

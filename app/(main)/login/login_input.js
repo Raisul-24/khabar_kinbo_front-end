@@ -1,36 +1,26 @@
 "use client"
 import React, { useContext, useState } from 'react';
-import Swal from 'sweetalert2';
 import { useRouter } from 'next/navigation'; 
-import { Contex } from '@/provider/contexProvider';
+import {  Context } from '@/provider/contextProvider';
+import { toast } from 'react-hot-toast';
 const LoginInput = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const router = useRouter(); 
-    const { signIn } = useContext(Contex);
+    const router = useRouter();
+    const { signIn } = useContext(Context);
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
-        // Here you can handle form submission, e.g., send data to the server
-        console.log('Email:', email);
-        console.log('Password:', password);
 
-        signIn(email, password)
-        .then((result) => {
-          console.log(result.user);
-  
-          if (result.user.email) {
-            Swal.fire("Login success!", "Welcome to our resturent", "success");
-          }
-          router.push("/");
-        })
-  
-        .catch((error) => {
-          console.error(error);
-          Swal.fire("Login failed", "Email or password is incorrect", "error");
-        });
-
-
+        try {
+            const result = await signIn(email, password);
+            if (result.user) {
+                toast.success("You've successfully logged in!");
+                router.push('/');
+            }
+        } catch (error) {
+            toast.error("Something went wrong. Try again later....");
+        }
     };
 
     return (
