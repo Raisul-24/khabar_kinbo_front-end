@@ -44,12 +44,12 @@ const Navbar = () => {
             <div className="navbar-center hidden lg:flex">
                <ul className="menu menu-horizontal px-1">
                   <li><Link href='/'>item-1</Link></li>
-                  <li><Link href='/addRestaurant'>Add Restaurant</Link></li>
+                  <li className="rounded-xl bg-transparent hover:bg-gradient-to-r from-yellow-50 to-red-50"><Link href='/addRestaurant'>Add Restaurant</Link></li>
                </ul>
             </div>
             <div className="navbar-end">
                <Link href='/login' 
-               className="font-semibold border-2 px-3 py-1 rounded-xl border-yellow-700 hover:border-red-600 bg-yellow-50 hover:bg-white-100 text-red-400 hover:text-yellow-900 hidden lg:flex"
+               className="font-semibold border-2 px-7 py-1 rounded-xl border-yellow-700 hover:border-red-600 bg-transparent hover:bg-gradient-to-r from-yellow-50 to-red-50 text-red-400 hover:text-yellow-900 hidden lg:flex"
                >Login</Link>
 
             </div>
