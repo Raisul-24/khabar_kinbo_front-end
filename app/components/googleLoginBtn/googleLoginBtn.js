@@ -1,9 +1,9 @@
 "use client";
-import { Contex } from '@/provider/contexProvider';
+import { Context } from '@/provider/contextProvider';
 import React, { useContext } from 'react';
 import { useRouter } from 'next/navigation'; 
 const GoogleLoginBtn = () => {
-    const { googleSignIn } = useContext(Contex);
+    const { googleSignIn } = useContext(Context);
     const router = useRouter()
     const handleGoogleLogin = async () => {
         if (googleSignIn) {

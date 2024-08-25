@@ -1,72 +1,62 @@
 "use client"
 import React, { useContext, useState } from 'react';
-import Swal from 'sweetalert2';
 import { useRouter } from 'next/navigation'; 
-import { Contex } from '@/provider/contexProvider';
+import {  Context } from '@/provider/contextProvider';
+import { toast } from 'react-hot-toast';
 const LoginInput = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const router = useRouter(); 
-    const { signIn } = useContext(Contex);
+    const router = useRouter();
+    const { signIn } = useContext(Context);
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
-        // Here you can handle form submission, e.g., send data to the server
-        console.log('Email:', email);
-        console.log('Password:', password);
 
-        signIn(email, password)
-        .then((result) => {
-          console.log(result.user);
-  
-          if (result.user.email) {
-            Swal.fire("Login success!", "Welcome to our resturent", "success");
-          }
-          router.push("/");
-        })
-  
-        .catch((error) => {
-          console.error(error);
-          Swal.fire("Login failed", "Email or password is incorrect", "error");
-        });
-
-
+        try {
+            const result = await signIn(email, password);
+            if (result.user) {
+                toast.success("You've successfully logged in!");
+                router.push('/');
+            }
+        } catch (error) {
+            toast.error("Something went wrong. Try again later....");
+        }
     };
 
     return (
         <div>
             <form className="mt-6" onSubmit={handleSubmit}>
                 <div>
-                    <label className="block text-gray-700">Email Address</label>
+                    <label className="block text-black">Email Address</label>
                     <input
                         type="email"
-                        placeholder="Enter Email Address"
+                        placeholder="Enter Email Address..."
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
-                        className="w-full px-4 py-3 rounded-lg bg-gray-200 mt-2 border focus:border-blue-500 focus:bg-white focus:outline-none"
+                        className="w-full px-4 py-3 rounded-lg bg-red-50 mt-2 border-2 border-red-200 focus:border-amber-500 focus:bg-yellow-50 focus:outline-none"
                         autoFocus
                         required
                     />
                 </div>
 
                 <div className="mt-4">
-                    <label className="block text-gray-700">Password</label>
+                    <label className="block text-black">Password</label>
                     <input
                         type="password"
-                        placeholder="Enter Password"
+                        placeholder="Enter Password..."
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                         minLength="6"
-                        className="w-full px-4 py-3 rounded-lg bg-gray-200 mt-2 border focus:border-blue-500 focus:bg-white focus:outline-none"
+                        className="w-full px-4 py-3 rounded-lg bg-red-50 mt-2 border-2 border-red-200 focus:border-amber-500 focus:bg-yellow-50 focus:outline-none"
                         required
                     />
                 </div>
 
-                <div className="text-right mt-2">
+                {/* <div className="text-right mt-2">
                     <a href="#" className="text-sm font-semibold text-gray-700 hover:text-blue-700 focus:text-blue-700">Forgot Password?</a>
-                </div>
+                </div> */}
 
-                <button type="submit" className="w-full block bg-indigo-500 hover:bg-indigo-400 focus:bg-indigo-400 text-white font-semibold rounded-lg px-4 py-3 mt-6">
+                <button type="submit" className="w-full block mt-6 font-semibold border-2 px-4 py-3 rounded-xl border-yellow-700 hover:border-red-600 bg-yellow-50 hover:bg-white-100 text-red-400 hover:text-yellow-900">
                     Log In
                 </button>
             </form>
