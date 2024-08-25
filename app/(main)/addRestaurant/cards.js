@@ -8,7 +8,7 @@ const cards = () => {
          <h1 className='text-lg md:text-3xl lg:text-5xl text-center font-bold md:font-extrabold'>Our Products</h1>
          <Marquee speed='25' pauseOnHover='false'>
             {/* card 1 */}
-         <div className="card card-compact bg-base-100 max-w-80 shadow-xl my-12 mx-5">
+         <div className="card card-compact bg-orange-50 max-w-80 shadow-xl my-12 mx-5">
             <figure>
                <img className='w-full h-52'
                   src="/addrestaurants/event.svg"
@@ -24,7 +24,7 @@ const cards = () => {
          </div>
 
          {/* card 2 */}
-         <div className="card card-compact bg-base-100 max-w-80 shadow-xl my-12 mx-5">
+         <div className="card card-compact bg-orange-50 max-w-80 shadow-xl my-12 mx-5">
             <figure>
                <img className='w-full h-52'
                   src="/addrestaurants/listing.jpg"
@@ -41,7 +41,7 @@ const cards = () => {
 
 
          {/* card 3 */}
-         <div className="card card-compact bg-base-100 max-w-80 shadow-xl my-12 mx-5">
+         <div className="card card-compact bg-orange-50 max-w-80 shadow-xl my-12 mx-5">
             <figure>
                <img className='w-full h-52'
                   src="/addrestaurants/advertise.jpg"
@@ -57,7 +57,7 @@ const cards = () => {
          </div>
 
          {/* card 4 */}
-         <div className="card card-compact bg-base-100 max-w-80 shadow-xl my-12 mx-5">
+         <div className="card card-compact bg-orange-50 max-w-80 shadow-xl my-12 mx-5">
             <figure>
                <img className='w-full h-52'
                   src="/addrestaurants/Hyperpure.svg"
@@ -74,7 +74,7 @@ const cards = () => {
 
 
          {/* card 5 */}
-         <div className="card card-compact bg-base-100 max-w-80 shadow-xl my-12 mx-5">
+         <div className="card card-compact bg-orange-50 max-w-80 shadow-xl my-12 mx-5">
             <figure>
                <img className='w-full h-52'
                   src="/addrestaurants/delivery.jpg"
