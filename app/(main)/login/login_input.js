@@ -27,36 +27,36 @@ const LoginInput = () => {
         <div>
             <form className="mt-6" onSubmit={handleSubmit}>
                 <div>
-                    <label className="block text-gray-700">Email Address</label>
+                    <label className="block text-black">Email Address</label>
                     <input
                         type="email"
-                        placeholder="Enter Email Address"
+                        placeholder="Enter Email Address..."
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
-                        className="w-full px-4 py-3 rounded-lg bg-gray-200 mt-2 border focus:border-blue-500 focus:bg-white focus:outline-none"
+                        className="w-full px-4 py-3 rounded-lg bg-red-50 mt-2 border-2 border-red-200 focus:border-amber-500 focus:bg-yellow-50 focus:outline-none"
                         autoFocus
                         required
                     />
                 </div>
 
                 <div className="mt-4">
-                    <label className="block text-gray-700">Password</label>
+                    <label className="block text-black">Password</label>
                     <input
                         type="password"
-                        placeholder="Enter Password"
+                        placeholder="Enter Password..."
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                         minLength="6"
-                        className="w-full px-4 py-3 rounded-lg bg-gray-200 mt-2 border focus:border-blue-500 focus:bg-white focus:outline-none"
+                        className="w-full px-4 py-3 rounded-lg bg-red-50 mt-2 border-2 border-red-200 focus:border-amber-500 focus:bg-yellow-50 focus:outline-none"
                         required
                     />
                 </div>
 
-                <div className="text-right mt-2">
+                {/* <div className="text-right mt-2">
                     <a href="#" className="text-sm font-semibold text-gray-700 hover:text-blue-700 focus:text-blue-700">Forgot Password?</a>
-                </div>
+                </div> */}
 
-                <button type="submit" className="w-full block bg-indigo-500 hover:bg-indigo-400 focus:bg-indigo-400 text-white font-semibold rounded-lg px-4 py-3 mt-6">
+                <button type="submit" className="w-full block mt-6 font-semibold border-2 px-4 py-3 rounded-xl border-yellow-700 hover:border-red-600 bg-yellow-50 hover:bg-white-100 text-red-400 hover:text-yellow-900">
                     Log In
                 </button>
             </form>
