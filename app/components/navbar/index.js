@@ -4,6 +4,7 @@ import React, { useContext } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Context } from "@/provider/contextProvider";
+import { toast } from "react-hot-toast";
 
 const Navbar = () => {
    const { user, logOut } = useContext(Context);
@@ -11,6 +12,7 @@ const Navbar = () => {
    const handleLogout = async () => {
       try {
          await logOut();
+         toast.success("Log Out Successfully!!");
       } catch (error) {
          console.error("Failed to log out:", error);
       }
