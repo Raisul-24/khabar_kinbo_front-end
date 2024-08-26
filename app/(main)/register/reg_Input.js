@@ -2,10 +2,10 @@
 import React, { useContext, useState } from 'react';
 import Swal from "sweetalert2";
 import { useRouter } from 'next/navigation'; // Use 'next/navigation' in Next.js 13
-import { Contex } from '@/provider/contexProvider';
+import { Context } from '@/provider/contextProvider';
 
 const Reg_Input = () => {
-    const { createUser } = useContext(Contex);
+    const { createUser } = useContext(Context);
     const router = useRouter(); // Initialize router for navigation
 
     // State for form inputs and loading state

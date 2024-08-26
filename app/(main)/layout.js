@@ -5,7 +5,9 @@ const MainLayout = ({children}) => {
     return (
         <>
         <Navbar></Navbar>
+        <div className="mx-auto">
         {children}
+        </div>
         <Footer></Footer>
         </>
       );

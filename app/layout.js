@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-import ContexProvider from "@/provider/contexProvider";
+import ContexProvider from "@/provider/contextProvider";
+import { Toaster } from "react-hot-toast";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,9 +15,10 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <ContexProvider>
-        <div className="">
+        <div className="bg-white">
         {children}
         </div>
+        <Toaster></Toaster>
         </ContexProvider>
         </body>
     </html>

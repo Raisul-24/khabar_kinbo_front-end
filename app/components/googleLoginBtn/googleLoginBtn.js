@@ -1,9 +1,9 @@
 "use client";
-import { Contex } from '@/provider/contexProvider';
+import { Context } from '@/provider/contextProvider';
 import React, { useContext } from 'react';
 import { useRouter } from 'next/navigation'; 
 const GoogleLoginBtn = () => {
-    const { googleSignIn } = useContext(Contex);
+    const { googleSignIn } = useContext(Context);
     const router = useRouter()
     const handleGoogleLogin = async () => {
         if (googleSignIn) {
@@ -23,7 +23,7 @@ const GoogleLoginBtn = () => {
             <button
                 type="button"
                 onClick={handleGoogleLogin}
-                className="w-full block bg-white hover:bg-gray-100 focus:bg-gray-100 text-gray-900 font-semibold rounded-lg px-4 py-3 border border-gray-300"
+                className="w-full block bg-white hover:bg-gradient-to-r from-yellow-50 to-red-50 focus:bg-amber-100 text-red-900 font-semibold rounded-lg px-4 py-3 border border-red-200 hover:border-amber-700"
             >
                 <div className="flex items-center justify-center">
                     <svg
