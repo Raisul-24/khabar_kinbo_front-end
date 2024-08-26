@@ -1,11 +1,9 @@
 "use client"
 import React, { useState } from 'react';
-import Reg_Input from './reg_Input';
 import { useForm } from 'react-hook-form';
 import { Button } from '@material-tailwind/react';
 import GoogleLoginBtn from '@/app/components/googleLoginBtn/googleLoginBtn';
 import Link from 'next/link';
-import { toast } from 'react-hot-toast';
 import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai';
 
 const Registration = () => {
