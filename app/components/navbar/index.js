@@ -1,9 +1,22 @@
+"use client"
 // app/components/navbar/navbar.js
-import React from "react";
+import React, { useContext } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { Context } from "@/provider/contextProvider";
+import { toast } from "react-hot-toast";
 
 const Navbar = () => {
+   const { user, logOut } = useContext(Context);
+
+   const handleLogout = async () => {
+      try {
+         await logOut();
+         toast.success("Log Out Successfully!!");
+      } catch (error) {
+         console.error("Failed to log out:", error);
+      }
+   };
    return (
       <div className="bg-yellow-50 ">
          <div className="navbar w-full mx-auto max-w-7xl">
@@ -28,7 +41,11 @@ const Navbar = () => {
                      className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
                      <li><Link href='/'>item-1</Link></li>
                      <li><Link href='/addRestaurant'>Add Restaurants</Link></li>
-                     <li><Link href='/login'>Login</Link></li>
+                     {user ? (
+                        <li role="button" onClick={handleLogout}>Logout</li>
+                     ) : (
+                        <li><Link href='/login'>Login</Link></li>
+                     )}
                   </ul>
                </div>
                <div className="flex justify-center p-0 m-0">
@@ -48,10 +65,20 @@ const Navbar = () => {
                </ul>
             </div>
             <div className="navbar-end">
-               <Link href='/login' 
-               className="font-semibold border-2 px-7 py-1 rounded-xl border-yellow-700 hover:border-red-600 bg-transparent hover:bg-gradient-to-r from-yellow-50 to-red-50 text-red-400 hover:text-yellow-900 hidden lg:flex"
-               >Login</Link>
-
+               {user ? (
+                  <button
+                     onClick={handleLogout}
+                     className="font-semibold border-2 px-7 py-1 rounded-xl border-yellow-700 hover:border-red-600 bg-transparent hover:bg-gradient-to-r from-yellow-50 to-red-50 text-red-400 hover:text-yellow-900 hidden lg:flex"
+                  >
+                     Logout
+                  </button>
+               ) : (
+                  <Link href='/login'
+                     className="font-semibold border-2 px-7 py-1 rounded-xl border-yellow-700 hover:border-red-600 bg-transparent hover:bg-gradient-to-r from-yellow-50 to-red-50 text-red-400 hover:text-yellow-900 hidden lg:flex"
+                  >
+                     Login
+                  </Link>
+               )}
             </div>
          </div>
       </div>
