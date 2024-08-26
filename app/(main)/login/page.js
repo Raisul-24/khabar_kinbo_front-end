@@ -3,39 +3,35 @@ import GoogleLoginBtn from '@/app/components/googleLoginBtn/googleLoginBtn';
 import Link from 'next/link';
 import { useForm } from 'react-hook-form';
 import { Button } from '@material-tailwind/react';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai';
+import { Context } from '@/provider/contextProvider';
+import { toast } from 'react-hot-toast';
+import { useRouter } from 'next/navigation';
 
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
-
+  const router = useRouter();
   const {
     register,
     handleSubmit,
     formState: { errors } } = useForm();
-  // const { signIn } = UseAuth();
+  const { signIn } = useContext(Context);
 
-  // const navigate = useNavigate();
-  // const location = useLocation();
+  const onSubmit = async (data) => {
+    // console.log('trigger', data)
+    const toastId = toast.loading("Logging In....");
+    try {
+      await signIn(data.email, data.password);
+      toast.success("LogIn Successfully!!", { id: toastId });
 
-  // const from = location.state?.from?.pathname || "/";
-
-  // const onSubmit = async (data) => {
-  //   const toastId = toast.loading("Logging In....");
-  //   try {
-  //     await signIn(data.email, data.password);
-  //     toast.success("LogIn Successfully!!", { id: toastId });
-
-  //     if (location.state && location.state.from) {
-  //       navigate(location.state.from.pathname);
-  //     } else {
-  //       navigate(from, { replace: true });
-  //     }
-  //   } catch (error) {
-  //     toast.error(error.message, { id: toastId });
-  //   }
-  // };
+// Redirect to the homepage
+router.push('/');
+    } catch (error) {
+      toast.error(error.message, { id: toastId });
+    }
+  };
 
   return (
     <div className="flex flex-col md:flex-row h-full py-16 md:py-40 lg:py-32 items-center bg-[url(https://i.ibb.co/17R85wC/authentication.png)]">
@@ -53,7 +49,7 @@ const Login = () => {
               LogIn Now!!
             </h3>
           </div>
-          <form //onSubmit={handleSubmit(onSubmit)}
+          <form onSubmit={handleSubmit(onSubmit)}
           >
             <div className="flex flex-col gap-8 p-6">
               <div className="relative h-11 w-full min-w-[200px]">
@@ -95,7 +91,7 @@ const Login = () => {
             </div>
 
             <div className="p-6 pt-0">
-              <Button className='w-full bg-gradient-to-r from-yellow-50 to-red-50 focus:bg-amber-100 text-red-900'
+              <Button type='submit' className='w-full bg-gradient-to-r from-yellow-50 to-red-50 focus:bg-amber-100 text-red-900'
               >Login</Button>
               <p className="flex justify-center my-3  text-medium antialiased font-light leading-normal text-inherit">
                 Or, Sign In with
