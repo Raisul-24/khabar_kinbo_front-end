@@ -8,21 +8,16 @@ export default function RegisterRestaurant() {
   const { register, handleSubmit, formState: { errors }, reset } = useForm();
 
   const onSubmit = async (data) => {
-    console.log('Data to be sent:', data);
-    
+    // console.log('Data to be sent:', data);
+    const toastId = toast.loading("Processing....");
     try {
       const response = await axiosPrivate.post('/requestRestaurant', data);
       // console.log('Success:', response.data);
-
-      toast.success(response.data.message || 'Restaurant submitted successfully! You\'ll be notified later.');
-
+      toast.success(response.data.message || 'Restaurant submitted successfully! You\'ll be notified later.', { id: toastId });
       reset();
-
     } catch (error) {
-      // console.error('Error:', error);
-
       const errorMessage = error.response?.data?.error || 'Something went wrong! Please try again later.';
-      toast.error(errorMessage);
+      toast.error(errorMessage, { id: toastId });
     }
   };
 

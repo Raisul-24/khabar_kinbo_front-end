@@ -28,7 +28,7 @@ const ContextProvider = ({ children }) => {
         signIn,
         googleSignIn,
         logOut,
-        user
+        user,
     };
 
     return (
