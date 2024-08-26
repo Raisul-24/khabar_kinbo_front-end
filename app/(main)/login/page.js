@@ -1,6 +1,4 @@
 "use client";
-import Image from 'next/image';
-import Login_input from './login_input';
 import GoogleLoginBtn from '@/app/components/googleLoginBtn/googleLoginBtn';
 import Link from 'next/link';
 import { useForm } from 'react-hook-form';
