@@ -1,11 +1,10 @@
-import DashboardLayout from '@/app/components/Layout/DashboardLayout/dashboardLayout';
 import React from 'react';
 
 const dashboard = () => {
    return (
-      <DashboardLayout>
-         dashboard info
-      </DashboardLayout>
+      <div>
+         dashboard main component like homepage
+      </div>
    );
 };
 

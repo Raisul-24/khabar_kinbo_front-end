@@ -2,9 +2,12 @@
 "use client";
 import React from "react";
 
+
 const DashboardNavbar = ({ toggleSidebar }) => {
     return (
-        <div className="flex items-center justify-between bg-gray-800 p-4 text-white">
+        <div className="p-4 bg-amber-50 text-red-900">
+         <h1 className="hidden lg:flex justify-center ml-64 font-semibold">Welcome to Khabar-kinbo Dashboard !!</h1>
+            <div className="flex lg:hidden items-center justify-between ">
             <button onClick={toggleSidebar} className="lg:hidden">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -21,7 +24,9 @@ const DashboardNavbar = ({ toggleSidebar }) => {
                     />
                 </svg>
             </button>
-            <h1 className="text-xl">Dashboard</h1>
+            
+            <h1 className="text-xl text-black">Dashboard</h1>
+            </div>
         </div>
     );
 };
