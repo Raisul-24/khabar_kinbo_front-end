@@ -41,6 +41,11 @@ const Navbar = () => {
                      className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
                      <li><Link href='/'>item-1</Link></li>
                      <li><Link href='/addRestaurant'>Add Restaurants</Link></li>
+                     {
+                        user && (
+                           <li><Link href='/dashboard'>Dashboard</Link></li>
+                        )
+                     }
                      {user ? (
                         <li role="button" onClick={handleLogout}>Logout</li>
                      ) : (
@@ -62,6 +67,11 @@ const Navbar = () => {
                <ul className="menu menu-horizontal px-1">
                   <li><Link href='/'>item-1</Link></li>
                   <li className="rounded-xl bg-transparent hover:bg-gradient-to-r from-yellow-50 to-red-50"><Link href='/addRestaurant'>Add Restaurant</Link></li>
+                  {
+                     user && (
+                        <li className="rounded-xl bg-transparent hover:bg-gradient-to-r from-yellow-50 to-red-50"><Link href='/dashboard'>Dashboard</Link></li>
+                     )
+                  }
                </ul>
             </div>
             <div className="navbar-end">
