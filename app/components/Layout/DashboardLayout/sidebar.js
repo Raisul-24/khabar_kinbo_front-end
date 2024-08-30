@@ -39,7 +39,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
                             <Link href="/" className="block py-2">Home</Link>
                         </li>
                         <li>
-                            <Link href="/dashboard/dashboard" className="block py-2">Home2</Link>
+                            <Link href="/dashboard/users" className="block py-2">Users</Link>
                         </li>
                         {/* Add more links as needed */}
                     </ul>

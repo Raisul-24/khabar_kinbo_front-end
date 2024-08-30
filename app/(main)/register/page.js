@@ -6,7 +6,7 @@ import GoogleLoginBtn from '@/app/components/googleLoginBtn/googleLoginBtn';
 import Link from 'next/link';
 import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai';
 import { toast } from 'react-hot-toast';
-import { axiosPrivate } from '@/app/components/Axios/axiosprivate';
+import { axiosPrivate } from '@/app/components/Axios/axiosPrivate';
 import { useRouter } from 'next/navigation'
 import { Context } from '@/provider/contextProvider';
 
