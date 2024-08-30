@@ -1,5 +1,5 @@
 import axios from "axios";
-import { axiosPrivate } from "./axiosprivate";
+import { axiosPrivate } from "./axiosPrivate";
 
 export const axiosPublic = axios.create({
   baseURL: axiosPrivate.defaults.baseURL,

@@ -1,7 +1,7 @@
 "use client";
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { axiosPrivate } from '@/app/components/Axios/axiosprivate';
+import { axiosPrivate } from '@/app/components/Axios/axiosPrivate';
 import { toast } from 'react-hot-toast';
 
 export default function RegisterRestaurant() {
