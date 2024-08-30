@@ -41,6 +41,9 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
                         <li>
                             <Link href="/dashboard/users" className="block py-2">Users</Link>
                         </li>
+                        <li>
+                            <Link href="/dashboard/requestRestaurant" className="block py-2">Request Restaurants</Link>
+                        </li>
                         {/* Add more links as needed */}
                     </ul>
                 </nav>
