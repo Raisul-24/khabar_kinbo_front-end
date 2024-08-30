@@ -4,17 +4,17 @@ import { axiosPrivate } from '@/app/components/Axios/axiosPrivate';
 
 const Users = () => {
   const [users, setUsers] = useState([]);
-  const [loading, setLoading] = useState(true); // Loading state
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     axiosPrivate.get('/users')
       .then((res) => {
         setUsers(res.data);
-        setLoading(false); // Set loading to false after data is fetched
+        setLoading(false); 
       })
       .catch((err) => {
         console.log(err);
-        setLoading(false); // Set loading to false even if there's an error
+        setLoading(false);
       });
   }, []);
 
