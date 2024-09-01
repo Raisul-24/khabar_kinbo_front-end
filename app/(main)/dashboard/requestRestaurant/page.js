@@ -16,11 +16,10 @@ const RequestRestaurant = () => {
         setLoading(false);
       })
       .catch((err) => {
-        console.log(err);
+        // console.log(err);
         setLoading(false);
       });
   }, []);
-
   const openModal = (restaurant) => {
     setSelectedRestaurant(restaurant);
     if (modalRef.current) {
